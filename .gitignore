@@ -1,0 +1,7 @@
+./dataprocessing/WindowDoorDatasets/
+./propall_floorplans1_door_yoloformat/
+./runs/
+__pycache__/
+hgcvhg.py
+models/yolov9-c.pt:Zone.Identifier
+rescaled/train/labels.cache

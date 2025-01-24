@@ -11,10 +11,17 @@ conda activate yolov9_detection
 
 git clone https://github.com/propall/yolov9freshfork.git
 cd yolov9freshfork/
+
+
 pip install -r requirements.txt
 ```
 
-### 1.2
+### 1.2 Model Finetuning
+
+Download yolov9-c.pt model and place it in models folder.
+```bash
+wget https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt
+```
 
 
 ## Useful Links

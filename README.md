@@ -11,6 +11,9 @@ conda activate yolov9_detection
 
 git clone https://github.com/propall/yolov9freshfork.git
 cd yolov9freshfork/
+
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+
 pip install -r requirements.txt
 
 conda install ipykernel
@@ -28,6 +31,12 @@ unzip dataset.zip -d dataset/
 
 ### 1.3 Data Preprocessing for custom data
 Custom data is processed using labelme and the roboflow styled YOLO dataset is copy-pasted.
+### 1.4 Model Finetuning
+
+Download yolov9-c.pt model and place it in models folder.
+```bash
+wget https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt
+```
 
 
 ## Useful Links

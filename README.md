@@ -12,9 +12,22 @@ conda activate yolov9_detection
 git clone https://github.com/propall/yolov9freshfork.git
 cd yolov9freshfork/
 pip install -r requirements.txt
+
+conda install ipykernel
+ipython kernel install --user --name=yolov9_detection
+If WSL is used, make sure that the "Jupyter" extension in VSCode is enabled for WSL too, by default it only enables on Windows.
 ```
 
-### 1.2
+### 1.2 Data Preprocessing for roboflow sources
+The datasets used for training are mainly from roboflow. Hence there are a lot of data preprocessing steps to filter out useful classes for more data. ```datapreprocessing``` folder in the repo focuses on this aspect.
+
+To extract the zip file to a folder use:
+```bash
+unzip dataset.zip -d dataset/
+```
+
+### 1.3 Data Preprocessing for custom data
+Custom data is processed using labelme and the roboflow styled YOLO dataset is copy-pasted.
 
 
 ## Useful Links

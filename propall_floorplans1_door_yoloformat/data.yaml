@@ -1,0 +1,6 @@
+train: propall_floorplans1_door_yoloformat/train/images
+
+nc: 1
+names: ['door']
+
+# python train_dual.py --device cpu --img 640 --batch-size 16 --epochs 5 --data HOME/wall2_dataset/wall2_data_yolov9_format/data.yaml --cfg models/detect/yolov9-c.yaml --min-items 0 --close-mosaic 15 --workers 8

@@ -15,9 +15,23 @@ cd yolov9freshfork/
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 
 pip install -r requirements.txt
+
+conda install ipykernel
+ipython kernel install --user --name=yolov9_detection
+If WSL is used, make sure that the "Jupyter" extension in VSCode is enabled for WSL too, by default it only enables on Windows.
 ```
 
-### 1.2 Model Finetuning
+### 1.2 Data Preprocessing for roboflow sources
+The datasets used for training are mainly from roboflow. Hence there are a lot of data preprocessing steps to filter out useful classes for more data. ```datapreprocessing``` folder in the repo focuses on this aspect.
+
+To extract the zip file to a folder use:
+```bash
+unzip dataset.zip -d dataset/
+```
+
+### 1.3 Data Preprocessing for custom data
+Custom data is processed using labelme and the roboflow styled YOLO dataset is copy-pasted.
+### 1.4 Model Finetuning
 
 Download yolov9-c.pt model and place it in models folder.
 ```bash

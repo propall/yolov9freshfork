@@ -3,7 +3,6 @@ import cv2
 import shutil
 from pathlib import Path
 
-
 def resize_image_and_labels(image_path: str, label_path: str, output_image_path: str, output_label_path: str, target_size: int):
     """
     Resizes an image to a fixed size and adjusts the bounding box annotations.
@@ -130,7 +129,7 @@ def process_dataset(dataset_path: str, acceptable_img_formats:dict ,target_size:
 
 if __name__=='__main__':
     # Define the dataset path
-    dataset_path = "propall_floorplans1_door_yoloformat/"
+    dataset_path = "propall_floorplans1_window_yoloformat/"
     
     # Set the target image size
     TARGET_SIZE = 640

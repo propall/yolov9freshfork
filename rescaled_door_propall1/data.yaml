@@ -1,13 +1,6 @@
-train: rescaled/train/images
-val: rescaled/train/images
+train: propall_floorplans1_door_yoloformat/train/images
 
 nc: 1
 names: ['door']
 
-# python train_dual.py --device 0 --img 640 --batch-size 32 --optimizer Adam --epochs 80 --data rescaled/data.yaml --cfg models/detect/yolov9-c-door.yaml --min-items 0 --close-mosaic 15 --workers 8 --name yolov9-80epochs --weights models/yolov9-c.pt --hyp hyp.door.yaml
-# Both train and val tags should be present, even if there's no validation
-# complete path from root directory should be present, not path relative to data.yaml
-
-# python detect_dual.py --source rescaled/train/images --img 640 --device 0 --weights 'runs/train/exp3/weights/best.pt' --name yolov9_c_2epochs_exp3
-
-#   
+# python train_dual.py --device cpu --img 640 --batch-size 16 --epochs 5 --data HOME/wall2_dataset/wall2_data_yolov9_format/data.yaml --cfg models/detect/yolov9-c.yaml --min-items 0 --close-mosaic 15 --workers 8

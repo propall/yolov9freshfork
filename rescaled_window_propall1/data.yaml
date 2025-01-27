@@ -4,7 +4,7 @@ val: rescaled_door_propall1/train/images
 nc: 1
 names: ['window']
 
-# python train_dual.py --device 0 --img 640 --batch-size 32 --optimizer Adam --epochs 80 --data rescaled_door_propall1/data.yaml --cfg models/detect/yolov9-c-door.yaml --min-items 0 --close-mosaic 15 --workers 8 --name yolov9-80epochs --weights models/yolov9-c.pt --hyp hyp.door.yaml
+# python train_dual.py --device 0 --img 640 --batch-size 16 --optimizer Adam --epochs 80 --data rescaled_window_propall1/data.yaml --cfg models/detect/yolov9-c-window.yaml --min-items 0 --close-mosaic 15 --workers 8 --name yolov9-80epochs_window --weights models/yolov9-c.pt --hyp hyp.window.yaml
 # Both train and val tags should be present, even if there's no validation
 # complete path from root directory should be present, not path relative to data.yaml
 

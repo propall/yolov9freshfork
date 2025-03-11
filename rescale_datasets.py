@@ -129,7 +129,7 @@ def process_dataset(dataset_path: str, acceptable_img_formats:dict ,target_size:
 
 if __name__=='__main__':
     # Define the dataset path
-    dataset_path = "propall_floorplans1_window_yoloformat/"
+    dataset_path = "yoloformat_wall_trainingdata_8_3_2025/"
     
     # Set the target image size
     TARGET_SIZE = 640

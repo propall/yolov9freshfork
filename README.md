@@ -19,6 +19,8 @@ pip install -r requirements.txt
 conda install ipykernel
 ipython kernel install --user --name=yolov9_detection
 If WSL is used, make sure that the "Jupyter" extension in VSCode is enabled for WSL too, by default it only enables on Windows.
+
+For pytorch 2.6 we have error due to changes with load() fn for loading weights, use torch==2.5.0 and torchvision==0.20 if you want to use the latest versions without modifying the code
 ```
 
 ### 1.2 Data Preprocessing for roboflow sources
@@ -30,12 +32,22 @@ unzip dataset.zip -d dataset/
 ```
 
 ### 1.3 Data Preprocessing for custom data
-Custom data is processed using labelme and the roboflow styled YOLO dataset is copy-pasted.
+Custom data is processed using labelme, converted into roboflow styled YOLO dataset and is then copy-pasted. It is then checked using ```view_dataset.py``` to check if bounding boxes are correct and then rescaled to 640 pixels(YOLO's input dimensions) using ```rescale_datasets.py```.
+
+
 ### 1.4 Model Finetuning
 
 Download yolov9-c.pt model and place it in models folder.
 ```bash
 wget https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt
+```
+
+### 1.5 Model Training and Inference
+
+```bash
+python train_dual.py --device 0 --img 640 --batch-size 16 --optimizer Adam --epochs 200 --data rescaled_yoloformat_wall_trainingdata_8_3_2025/data.yaml --cfg models/detect/yolov9-c-wall.yaml --min-items 0 --close-mosaic 15 --workers 8 --name yolov9-200epochs_wall_trainingdata_8_3_2025 --weights models/yolov9-c.pt --hyp hyp.wall.yaml
+
+python detect_dual.py --source rescaled_yoloformat_wall_trainingdata_8_3_2025/train/images --img 640 --device 0 --weights 'runs/train/yolov9-200epochs_wall_trainingdata_8_3_2025/weights/best.pt' --name yolov9_c_200epochs_wall_trainingdata_8_3_2025
 ```
 
 

@@ -69,5 +69,5 @@ def overlay_bounding_boxes(train_dir: str):
 
 if __name__ == "__main__":
     # Path to the train directory
-    train_dir = "rescaled/train"
+    train_dir = "yoloformat_wall_trainingdata_8_3_2025/train"
     overlay_bounding_boxes(train_dir)

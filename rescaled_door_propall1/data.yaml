@@ -1,4 +1,6 @@
 train: propall_floorplans1_door_yoloformat/train/images
+val: propall_floorplans1_door_yoloformat/train/images
+
 
 nc: 1
 names: ['door']

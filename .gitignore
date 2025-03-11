@@ -7,3 +7,9 @@ hgcvhg.py
 models/yolov9-c.pt
 rescaled_door_propall1/train/labels.cache
 rescaled_window_propall1/train/labels.cache
+floortest1.v3-pinterestandholdout_test_transfers_for_walls.yolov9/
+propall_holdout_testset/
+rescaled_yoloformat_wall_trainingdata_11_3_2025.zip
+rescaled_yoloformat_wall_trainingdata_11_3_2025/
+rescaled_yoloformat_wall_trainingdata_8_3_2025.zip
+yoloformat_wall_trainingdata_8_3_2025/
